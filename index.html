@@ -26,31 +26,59 @@
     <div class="container">
         <div class="row">
 
-            <div class="col" id="weekly-tasks">
+    <div class="col" id="weekly-tasks">
 
-                <form id="goal-form">
+        <form id="goal-form">
 
-                    <label for="user-name">Name:</label>
-                    <input type="text" id="user-name" name="user-name" required>
+            <label for="user-name">Name:</label>
+            <input type="text" id="user-name" name="user-name" required>
 
-                    <label for="daily-goal">Daily Task Goal:</label>
-                    <input type="number" id="daily-goal" name="daily-goal" required>
+            <label for="daily-goal">Daily Task Goal:</label>
+            <input type="number" id="daily-goal" name="daily-goal" required>
 
-                    <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-                    <input type="number" id="bonus-tasks" name="bonus-tasks" required>
+            <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+            <input type="number" id="bonus-tasks" name="bonus-tasks" required>
 
-                    <button type="submit" id="goal-btn">Calculate Weekly Goal</button>
+            <button type="submit" id="goal-btn">Calculate Weekly Goal</button>
 
-                </form>
+        </form>
 
-                <p id="goal-message"></p>
+        <p id="goal-message"></p>
 
-                <script src="js/task-manager.js"></script>
+        <script src="js/task-manager.js"></script>
 
-            </div>
-
-        </div>
     </div>
+
+    <div class="col" id="metric-converter">
+
+    <form id="metric-form">
+
+        <label for="metric-value">Enter a value:</label>
+        <input type="number" id="metric-value" name="metric-value" required>
+
+        <label for="conversion">Choose a conversion:</label>
+        <select id="conversion" name="conversion" required>
+            <option value="inch to centimeter">Inch to Centimeter</option>
+            <option value="foot to centimeter">Foot to Centimeter</option>
+            <option value="yard to meter">Yard to Meter</option>
+            <option value="mile to kilometer">Mile to Kilometer</option>
+            <option value="centimeter to inch">Centimeter to Inch</option>
+            <option value="centimeter to foot">Centimeter to Foot</option>
+            <option value="meter to yard">Meter to Yard</option>
+            <option value="kilometer to mile">Kilometer to Mile</option>
+        </select>
+
+        <button type="submit" id="convert-btn">Convert</button>
+
+    </form>
+
+    <p id="conversion-result"></p>
+
+    <script defer src="js/metric-converter.js"></script>
+
+</div>
+
+</div>
 
 </body>
 </html>
