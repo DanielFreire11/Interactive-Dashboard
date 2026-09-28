@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFv47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
@@ -26,59 +26,104 @@
     <div class="container">
         <div class="row">
 
-    <div class="col" id="weekly-tasks">
+            <!-- Weekly Tasks -->
+            <div class="col" id="weekly-tasks">
 
-        <form id="goal-form">
+                <form id="goal-form">
 
-            <label for="user-name">Name:</label>
-            <input type="text" id="user-name" name="user-name" required>
+                    <label for="user-name">Name:</label>
+                    <input type="text" id="user-name" name="user-name" required>
 
-            <label for="daily-goal">Daily Task Goal:</label>
-            <input type="number" id="daily-goal" name="daily-goal" required>
+                    <label for="daily-goal">Daily Task Goal:</label>
+                    <input type="number" id="daily-goal" name="daily-goal" required>
 
-            <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-            <input type="number" id="bonus-tasks" name="bonus-tasks" required>
+                    <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+                    <input type="number" id="bonus-tasks" name="bonus-tasks" required>
 
-            <button type="submit" id="goal-btn">Calculate Weekly Goal</button>
+                    <button type="submit" id="goal-btn">Calculate Weekly Goal</button>
 
-        </form>
+                </form>
 
-        <p id="goal-message"></p>
+                <p id="goal-message"></p>
 
-        <script src="js/task-manager.js"></script>
+                <script src="js/task-manager.js"></script>
 
+            </div>
+
+
+            <!-- Metric Converter -->
+            <div class="col" id="metric-converter">
+
+                <form id="metric-form">
+
+                    <label for="metric-value">Enter a value:</label>
+                    <input type="number" id="metric-value" name="metric-value" required>
+
+                    <label for="conversion">Choose a conversion:</label>
+
+                    <select id="conversion" name="conversion" required>
+                        <option value="inch to centimeter">Inch to Centimeter</option>
+                        <option value="foot to centimeter">Foot to Centimeter</option>
+                        <option value="yard to meter">Yard to Meter</option>
+                        <option value="mile to kilometer">Mile to Kilometer</option>
+                        <option value="centimeter to inch">Centimeter to Inch</option>
+                        <option value="centimeter to foot">Centimeter to Foot</option>
+                        <option value="meter to yard">Meter to Yard</option>
+                        <option value="kilometer to mile">Kilometer to Mile</option>
+                    </select>
+
+                    <button type="submit" id="convert-btn">Convert</button>
+
+                </form>
+
+                <p id="conversion-result"></p>
+
+                <script defer src="js/metric-converter.js"></script>
+
+            </div>
+
+
+            <!-- Magic Eight Ball -->
+            <div class="col" id="magic-eight-ball">
+
+                <link rel="stylesheet" href="css/magic-eight-ball.css">
+
+                <h2 class="heading">Magic Eight Ball</h2>
+
+                <form>
+
+                    <p>
+                        Type a yes/no question below, then click on the Eight Ball below to get your answer!
+                    </p>
+
+                    <input id="question" name="question" size="80">
+
+                    <div id="magicEightBall">
+
+                        <div id="circle"></div>
+
+                        <img
+                            id="ball"
+                            src="img/magic-eight-ball.png"
+                            alt="Magic Eight Ball"
+                        >
+
+                    </div>
+
+                    <button id="reset" name="reset" type="reset">
+                        Ask another question
+                    </button>
+
+                </form>
+
+                <br>
+
+                <script src="js/magic-eight-ball.js" defer></script>
+
+            </div>
+
+        </div>
     </div>
-
-    <div class="col" id="metric-converter">
-
-    <form id="metric-form">
-
-        <label for="metric-value">Enter a value:</label>
-        <input type="number" id="metric-value" name="metric-value" required>
-
-        <label for="conversion">Choose a conversion:</label>
-        <select id="conversion" name="conversion" required>
-            <option value="inch to centimeter">Inch to Centimeter</option>
-            <option value="foot to centimeter">Foot to Centimeter</option>
-            <option value="yard to meter">Yard to Meter</option>
-            <option value="mile to kilometer">Mile to Kilometer</option>
-            <option value="centimeter to inch">Centimeter to Inch</option>
-            <option value="centimeter to foot">Centimeter to Foot</option>
-            <option value="meter to yard">Meter to Yard</option>
-            <option value="kilometer to mile">Kilometer to Mile</option>
-        </select>
-
-        <button type="submit" id="convert-btn">Convert</button>
-
-    </form>
-
-    <p id="conversion-result"></p>
-
-    <script defer src="js/metric-converter.js"></script>
-
-</div>
-
-</div>
 
 </body>
 </html>

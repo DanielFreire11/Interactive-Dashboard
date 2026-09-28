@@ -59,5 +59,17 @@ END IF
 
 DISPLAY result
 
+ELSE
+    WRITE "Invalid conversion"
+
+END IF
+
+DISPLAY result
+
+## Magic Eight Ball
+
+The Magic Eight Ball is an interactive game that allows users to enter a yes/no question and receive a random response. The user clicks on the Magic Eight Ball image to display an answer.
+
+The game uses HTML, CSS, and JavaScript. JavaScript checks that the user has entered a question, selects a random response using `Math.random()`, and displays the response on the page. The reset button hides the answer so the user can ask another question.
 
 END
