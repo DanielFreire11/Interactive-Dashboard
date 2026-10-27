@@ -98,15 +98,44 @@
                             type="text"
                             id="task-name"
                             name="task-name"
+                            required
                         >
 
-                        <button type="button" id="add-task">
+                        <label for="task-priority">Priority:</label>
+
+                        <select
+                            id="task-priority"
+                            name="task-priority"
+                        >
+                            <option value="High">High</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+
+                        <label for="task-important">
+                            <input
+                                type="checkbox"
+                                id="task-important"
+                                name="task-important"
+                            >
+                            Mark as important
+                        </label>
+
+                        <button type="submit" id="add-task">
                             Add Task
                         </button>
 
                     </form>
 
-                    <!-- The task list will be generated with JavaScript -->
+                    <button
+                        type="button"
+                        id="delete-task-list"
+                    >
+                        Delete All Tasks
+                    </button>
+
+                    <!-- JavaScript will display tasks here -->
+                    <ul id="user-tasks"></ul>
 
                 </div>
 
