@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,11 @@
 
     <title>My Interactive Dashboard</title>
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Digital Clock CSS -->
+    <link rel="stylesheet" href="css/digital-clock.css">
 
     <!-- Bootstrap -->
     <link
@@ -25,6 +30,10 @@
     ></script>
 
     <link rel="stylesheet" href="css/magic-eight-ball.css">
+
+    <!-- Digital Clock JavaScript -->
+    <script defer src="js/digital-clock.js"></script>
+
 </head>
 
 <body>
@@ -40,202 +49,216 @@
         Unfortunately, your web browser does not support JavaScript.
     </noscript>
 
-    <div class="container">
-        <div class="row">
+    <main>
 
-            <!-- Weekly Tasks and Task Manager -->
-            <div class="col" id="weekly-tasks">
+        <!-- Digital Clock -->
+        <div id="digital-clock" class="col">
 
-                <!-- Weekly Goal Form -->
-                <form id="goal-form">
+            <h3>Current Time &amp; Date</h3>
 
-                    <label for="user-name">Name:</label>
-                    <input
-                        type="text"
-                        id="user-name"
-                        name="user-name"
-                        required
-                    >
+            <p id="clock-face"></p>
 
-                    <label for="daily-goal">Daily Task Goal:</label>
-                    <input
-                        type="number"
-                        id="daily-goal"
-                        name="daily-goal"
-                        required
-                    >
+            <p id="calendar-date"></p>
 
-                    <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-                    <input
-                        type="number"
-                        id="bonus-tasks"
-                        name="bonus-tasks"
-                        required
-                    >
+        </div>
 
-                    <button type="submit" id="goal-btn">
-                        Calculate Weekly Goal
-                    </button>
+        <div class="container">
+            <div class="row">
 
-                </form>
+                <!-- Weekly Tasks and Task Manager -->
+                <div class="col" id="weekly-tasks">
 
-                <p id="goal-message"></p>
+                    <!-- Weekly Goal Form -->
+                    <form id="goal-form">
 
-                <!-- Weekly Task Manager -->
-                <div id="task-list">
-
-                    <h3>Weekly Task List</h3>
-
-                    <p>
-                        Enter a task below to manage your goals.
-                    </p>
-
-                    <form id="task-form">
-
-                        <label for="task-name">Enter task:</label>
-
+                        <label for="user-name">Name:</label>
                         <input
                             type="text"
-                            id="task-name"
-                            name="task-name"
+                            id="user-name"
+                            name="user-name"
                             required
                         >
 
-                        <label for="task-priority">Priority:</label>
-
-                        <select
-                            id="task-priority"
-                            name="task-priority"
+                        <label for="daily-goal">Daily Task Goal:</label>
+                        <input
+                            type="number"
+                            id="daily-goal"
+                            name="daily-goal"
+                            required
                         >
-                            <option value="High">High</option>
-                            <option value="Medium" selected>Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
 
-                        <label for="task-important">
-                            <input
-                                type="checkbox"
-                                id="task-important"
-                                name="task-important"
-                            >
-                            Mark as important
-                        </label>
+                        <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+                        <input
+                            type="number"
+                            id="bonus-tasks"
+                            name="bonus-tasks"
+                            required
+                        >
 
-                        <button type="submit" id="add-task">
-                            Add Task
+                        <button type="submit" id="goal-btn">
+                            Calculate Weekly Goal
                         </button>
 
                     </form>
 
-                    <button
-                        type="button"
-                        id="delete-task-list"
-                    >
-                        Delete All Tasks
-                    </button>
+                    <p id="goal-message"></p>
 
-                    <!-- JavaScript will display tasks here -->
-                    <ul id="user-tasks"></ul>
+                    <!-- Weekly Task Manager -->
+                    <div id="task-list">
+
+                        <h3>Weekly Task List</h3>
+
+                        <p>
+                            Enter a task below to manage your goals.
+                        </p>
+
+                        <form id="task-form">
+
+                            <label for="task-name">Enter task:</label>
+
+                            <input
+                                type="text"
+                                id="task-name"
+                                name="task-name"
+                                required
+                            >
+
+                            <label for="task-priority">Priority:</label>
+
+                            <select
+                                id="task-priority"
+                                name="task-priority"
+                            >
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+
+                            <label for="task-important">
+                                <input
+                                    type="checkbox"
+                                    id="task-important"
+                                    name="task-important"
+                                >
+                                Mark as important
+                            </label>
+
+                            <button type="submit" id="add-task">
+                                Add Task
+                            </button>
+
+                        </form>
+
+                        <button
+                            type="button"
+                            id="delete-task-list"
+                        >
+                            Delete All Tasks
+                        </button>
+
+                        <ul id="user-tasks"></ul>
+
+                    </div>
+
+                </div>
+
+                <!-- Metric Converter -->
+                <div class="col" id="metric-converter">
+
+                    <form id="metric-form">
+
+                        <label for="metric-value">Enter a value:</label>
+
+                        <input
+                            type="number"
+                            id="metric-value"
+                            name="metric-value"
+                            required
+                        >
+
+                        <label for="conversion">Choose a conversion:</label>
+
+                        <select id="conversion" name="conversion" required>
+                            <option value="inch to centimeter">
+                                Inch to Centimeter
+                            </option>
+                            <option value="foot to centimeter">
+                                Foot to Centimeter
+                            </option>
+                            <option value="yard to meter">
+                                Yard to Meter
+                            </option>
+                            <option value="mile to kilometer">
+                                Mile to Kilometer
+                            </option>
+                            <option value="centimeter to inch">
+                                Centimeter to Inch
+                            </option>
+                            <option value="centimeter to foot">
+                                Centimeter to Foot
+                            </option>
+                            <option value="meter to yard">
+                                Meter to Yard
+                            </option>
+                            <option value="kilometer to mile">
+                                Kilometer to Mile
+                            </option>
+                        </select>
+
+                        <button type="submit" id="convert-btn">
+                            Convert
+                        </button>
+
+                    </form>
+
+                    <p id="conversion-result"></p>
+
+                </div>
+
+                <!-- Magic Eight Ball -->
+                <div class="col" id="magic-eight-ball">
+
+                    <h2 class="heading">Magic Eight Ball</h2>
+
+                    <form>
+
+                        <p>
+                            Type a yes/no question below, then click on the
+                            Eight Ball below to get your answer!
+                        </p>
+
+                        <input
+                            id="question"
+                            name="question"
+                            size="80"
+                        >
+
+                        <div id="magicEightBall">
+
+                            <div id="circle"></div>
+
+                            <img
+                                id="ball"
+                                src="img/magic-eight-ball.png"
+                                alt="Magic Eight Ball"
+                            >
+
+                        </div>
+
+                        <button id="reset" name="reset" type="reset">
+                            Ask another question
+                        </button>
+
+                    </form>
 
                 </div>
 
             </div>
-
-            <!-- Metric Converter -->
-            <div class="col" id="metric-converter">
-
-                <form id="metric-form">
-
-                    <label for="metric-value">Enter a value:</label>
-
-                    <input
-                        type="number"
-                        id="metric-value"
-                        name="metric-value"
-                        required
-                    >
-
-                    <label for="conversion">Choose a conversion:</label>
-
-                    <select id="conversion" name="conversion" required>
-                        <option value="inch to centimeter">
-                            Inch to Centimeter
-                        </option>
-                        <option value="foot to centimeter">
-                            Foot to Centimeter
-                        </option>
-                        <option value="yard to meter">
-                            Yard to Meter
-                        </option>
-                        <option value="mile to kilometer">
-                            Mile to Kilometer
-                        </option>
-                        <option value="centimeter to inch">
-                            Centimeter to Inch
-                        </option>
-                        <option value="centimeter to foot">
-                            Centimeter to Foot
-                        </option>
-                        <option value="meter to yard">
-                            Meter to Yard
-                        </option>
-                        <option value="kilometer to mile">
-                            Kilometer to Mile
-                        </option>
-                    </select>
-
-                    <button type="submit" id="convert-btn">
-                        Convert
-                    </button>
-
-                </form>
-
-                <p id="conversion-result"></p>
-
-            </div>
-
-            <!-- Magic Eight Ball -->
-            <div class="col" id="magic-eight-ball">
-
-                <h2 class="heading">Magic Eight Ball</h2>
-
-                <form>
-
-                    <p>
-                        Type a yes/no question below, then click on the
-                        Eight Ball below to get your answer!
-                    </p>
-
-                    <input
-                        id="question"
-                        name="question"
-                        size="80"
-                    >
-
-                    <div id="magicEightBall">
-
-                        <div id="circle"></div>
-
-                        <img
-                            id="ball"
-                            src="img/magic-eight-ball.png"
-                            alt="Magic Eight Ball"
-                        >
-
-                    </div>
-
-                    <button id="reset" name="reset" type="reset">
-                        Ask another question
-                    </button>
-
-                </form>
-
-            </div>
-
         </div>
-    </div>
 
-    <!-- JavaScript files -->
+    </main>
+
+    <!-- Existing JavaScript files -->
     <script src="js/task-manager.js"></script>
     <script src="js/metric-converter.js"></script>
     <script src="js/magic-eight-ball.js"></script>

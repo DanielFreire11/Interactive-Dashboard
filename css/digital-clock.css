@@ -1,0 +1,26 @@
+/* Digital Clock Styles */
+#digital-clock {
+    background-color: #ffffff;
+    color: #212529;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#digital-clock h3 {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+#clock-face {
+    font-size: 32px;
+    font-weight: bold;
+    color: #198754;
+}
+
+#calendar-date {
+    font-size: 18px;
+    color: #6c757d;
+}
